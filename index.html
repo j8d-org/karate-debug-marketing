@@ -136,6 +136,40 @@
             font-weight: 600;
             margin-bottom: 24px;
         }
+        .social-proof {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+            margin-top: 48px;
+            padding: 24px 40px;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .social-proof-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        .social-proof-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .social-proof-label {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+        .social-proof-divider {
+            width: 1px;
+            height: 40px;
+            background: var(--gray-300);
+        }
 
         /* Demo Section */
         .demo {
@@ -417,6 +451,22 @@
                     Install from VS Code
                 </a>
                 <a href="#features" class="btn btn-secondary btn-large">Learn More</a>
+            </div>
+            <div class="social-proof">
+                <div class="social-proof-item">
+                    <span class="social-proof-number">⭐ 5.0</span>
+                    <span class="social-proof-label">Rating</span>
+                </div>
+                <div class="social-proof-divider"></div>
+                <div class="social-proof-item">
+                    <span class="social-proof-number">24+</span>
+                    <span class="social-proof-label">Installs</span>
+                </div>
+                <div class="social-proof-divider"></div>
+                <div class="social-proof-item">
+                    <span class="social-proof-number">30</span>
+                    <span class="social-proof-label">Day Free Trial</span>
+                </div>
             </div>
         </div>
     </section>
