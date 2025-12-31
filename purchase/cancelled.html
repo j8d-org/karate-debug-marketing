@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Cancelled - Karate Debug</title>
+    <link rel="icon" type="image/png" href="../karate-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #5c4ee5;
+            --dark: #0f172a;
+            --gray-500: #64748b;
+            --gray-300: #cbd5e1;
+            --gray-100: #f1f5f9;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--gray-100);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 48px;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 24px;
+        }
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+        .subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-500);
+            margin-bottom: 32px;
+        }
+        .buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            background: #4a3dd1;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(92, 78, 229, 0.4);
+        }
+        .btn-secondary {
+            background: var(--white);
+            color: var(--dark);
+            border: 2px solid var(--gray-300);
+        }
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        .support {
+            margin-top: 24px;
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+        .support a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .support a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">✋</div>
+        <h1>Purchase Cancelled</h1>
+        <p class="subtitle">No worries! Your purchase was cancelled and you haven't been charged.</p>
+        
+        <div class="buttons">
+            <a href="https://karate-debug-api.vercel.app/api/purchase/start" class="btn btn-primary">
+                Try Again
+            </a>
+            <a href="/" class="btn btn-secondary">
+                Back to Home
+            </a>
+        </div>
+
+        <p class="support">
+            Having issues? Contact <a href="mailto:ryan@karatedebug.com">ryan@karatedebug.com</a>
+        </p>
+    </div>
+</body>
+</html>
+

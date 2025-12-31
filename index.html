@@ -628,7 +628,7 @@
                         <li>Java debugging support</li>
                         <li>Early access to new features</li>
                     </ul>
-                    <a href="https://marketplace.visualstudio.com/items?itemName=j8d.karate-debug" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started</a>
+                    <a href="https://karate-debug-api.vercel.app/api/purchase/start" class="btn btn-primary" style="width:100%;justify-content:center;">Buy Now</a>
                 </div>
             </div>
         </div>
@@ -698,5 +698,23 @@
             </div>
         </div>
     </footer>
+
+    <!-- Error Toast -->
+    <div id="error-toast" style="display:none; position:fixed; top:100px; left:50%; transform:translateX(-50%); background:#ef4444; color:white; padding:16px 24px; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.2); z-index:9999; max-width:400px; text-align:center;">
+        <span id="error-message"></span>
+        <button onclick="document.getElementById('error-toast').style.display='none'" style="background:none; border:none; color:white; margin-left:16px; cursor:pointer; font-size:1.2rem;">×</button>
+    </div>
+
+    <script>
+        // Handle error query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        if (error) {
+            document.getElementById('error-message').textContent = decodeURIComponent(error);
+            document.getElementById('error-toast').style.display = 'block';
+            // Clean up URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    </script>
 </body>
 </html>
