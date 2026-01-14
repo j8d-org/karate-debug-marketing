@@ -850,8 +850,26 @@
             if (e.key === 'Escape') closeContactModal();
         });
 
-        // Handle error query parameter
+        // Handle URL query parameters
         const urlParams = new URLSearchParams(window.location.search);
+
+        // Handle contact parameter - auto-open modal and pre-select category
+        if (urlParams.has('contact')) {
+            const contactType = urlParams.get('contact');
+            const categoryMap = {
+                'bug': 'Bug Report',
+                'feature': 'Feature Request',
+                'general': 'General Inquiry'
+            };
+            if (contactType && categoryMap[contactType]) {
+                document.getElementById('contact-category').value = categoryMap[contactType];
+            }
+            openContactModal();
+            // Clean up URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+
+        // Handle error parameter
         const error = urlParams.get('error');
         if (error) {
             document.getElementById('error-message').textContent = decodeURIComponent(error);
