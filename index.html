@@ -1090,6 +1090,17 @@
             if (contactType && categoryMap[contactType]) {
                 document.getElementById('contact-category').value = categoryMap[contactType];
             }
+            // Handle ide parameter - pre-select IDE dropdown
+            const ide = urlParams.get('ide');
+            if (ide) {
+                const ideMap = {
+                    'vscode': 'VS Code',
+                    'intellij': 'IntelliJ IDEA'
+                };
+                if (ideMap[ide]) {
+                    document.getElementById('contact-ide').value = ideMap[ide];
+                }
+            }
             openContactModal();
             // Clean up URL
             window.history.replaceState({}, document.title, window.location.pathname);
